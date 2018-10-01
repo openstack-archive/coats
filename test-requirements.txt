@@ -1,0 +1,2 @@
+# this file is needed by readthedocs.org so don't move them in another place
+pre-commit

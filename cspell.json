@@ -1,0 +1,60 @@
+{
+    "version": "0.1",
+    "language": "en",
+    "words": [
+        "Sbarnea",
+        "Sorin",
+        "TOXENV",
+        "atexit",
+        "bdist",
+        "conda",
+        "deps",
+        "envars",
+        "envlist",
+        "envs",
+        "htmlcov",
+        "ifeq",
+        "ifndef",
+        "ifneq",
+        "noqa",
+        "passenv",
+        "pycache",
+        "pycodestyle",
+        "pyenv",
+        "pytest",
+        "repo",
+        "repos",
+        "sdist",
+        "setenv",
+        "symlink",
+        "symlinks",
+        "testenv",
+        "tolower",
+        "uname",
+        "xargs",
+        "zuul"
+    ],
+    "flagWords": [],
+    "allowCompoundWords": true,
+    "dictionaries": [
+        "python",
+        "html",
+        "css"
+    ],
+    "ignoreRegExpList": [
+        "/'s\\b/",
+        "/\\br'/",
+        "/\\bu'/",
+        "/\\b-rrequirements/",
+        "[^\\s]{20,}",
+        "/I18NSPHINXOPTS/"
+    ],
+    "ignorePaths": [
+        "docs/build",
+        ".tox",
+        ".eggs"
+    ],
+    "ignoreWords": [
+        "I18NSPHINXOPTS"
+    ]
+}

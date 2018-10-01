@@ -1,0 +1,101 @@
+{
+  "version": "2.1",
+  "groups": [
+    {
+      "name": "failed2",
+      "urls": [
+        "http://logs.openstack.org",
+        "http://logs.rdoproject.org",
+        "https://ci.centos.org",
+        "https://logs.rdoproject.org",
+        "https://zuul.openstack.org"
+      ],
+      "substitutions": [
+        {
+          "input": "(failed[=:]\\s?[1-9]\\d*.*)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "(\\*\\*\\* FAILED with status: .*)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "(.* failed with error code .*)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "((ERROR|error|fatal|RUN END RESULT_TIMED_OUT)[:\\!] .*)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": false
+        },
+        {
+          "input": "(Failed \\d+ tests - output below:)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "(\\[(DEPRECATION )?WARNING\\].*)",
+          "inputType": "regexp",
+          "output": "<span style='color: orange;'>$1</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "(.*CREATE_FAILED.*)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "(Exception registering nodes|failed: [^0]|Could not find or access ).*",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$&</span>",
+          "caseSensitive": true
+        },
+        {
+          "input": "(error:.*)",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": false
+        },
+        {
+          "input": "(.* (marked build as failure|No such file or directory))",
+          "inputType": "regexp",
+          "output": "<span style='color: red;'>$1</span>",
+          "caseSensitive": true
+        }
+      ],
+      "html": "output",
+      "enabled": true,
+      "mode": "auto&manual"
+    },
+    {
+      "name": "hyperlinking-logs",
+      "urls": [
+        "http://logs.openstack.org",
+        "http://logs.rdoproject.org",
+        "https://ci.centos.org",
+        "https://logs.rdoproject.org",
+        "https://zuul.openstack.org"
+      ],
+      "substitutions": [
+        {
+          "input": "/home/zuul/workspace/logs/(\\w+)\\.log",
+          "inputType": "regexp",
+          "output": "<a href=\"logs/$1.txt.gz\" style=\"color: blue;\">$&</a>",
+          "caseSensitive": false
+        }
+      ],
+      "html": "output",
+      "enabled": true,
+      "mode": "auto&manual"
+    }
+  ]
+}
