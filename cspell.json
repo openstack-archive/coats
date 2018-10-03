@@ -12,6 +12,7 @@
         "envars",
         "envlist",
         "envs",
+        "gerrit",
         "htmlcov",
         "ifeq",
         "ifndef",
@@ -24,6 +25,7 @@
         "pytest",
         "repo",
         "repos",
+        "rtox",
         "sdist",
         "setenv",
         "symlink",
@@ -52,7 +54,8 @@
     "ignorePaths": [
         "docs/build",
         ".tox",
-        ".eggs"
+        ".eggs",
+        "package-lock.json"
     ],
     "ignoreWords": [
         "I18NSPHINXOPTS"
