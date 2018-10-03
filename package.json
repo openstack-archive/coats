@@ -7,11 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "spell": "npm -s run spell-files && npm -s run spell-commit",
     "spell-commit": "git log -1 --pretty=%B > .git/commit.msg && cspell .git/commit.msg",
-    "spell-files": "git ls-files | xargs cspell --unique"
+    "spell-files": "git ls-files | xargs cspell --unique",
+    "//": "tox linter will also call npm spell-(commit) at the end",
+    "lint": "tox -e linters",
+    "prod": "gulp prod; python setup.py sdist"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ssbarnea/coats.git"
+    "url": "https://github.com/openstack/coats.git"
   },
   "keywords": [
     "openstack",
@@ -22,14 +25,13 @@
     "zuul",
     "logs"
   ],
-  "author": "Sorin Sbarnea",
+  "author": "OpenStack",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ssbarnea/coats/issues"
+    "url": "https://storyboard.openstack.org/#!/project/openstack/coats"
   },
-  "homepage": "https://github.com/ssbarnea/coats#readme",
-  "dependencies": {
-    "cspell": "^2.1.12",
-    "npm": "^6.1.0"
+  "homepage": "https://github.com/openstack/coats#readme",
+  "devDependencies": {
+    "cspell": "^2.1.12"
   }
 }
