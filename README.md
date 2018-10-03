@@ -1,7 +1,5 @@
 # coats
 
-[![Build Status](https://travis-ci.org/ssbarnea/coats.svg?branch=master)](https://travis-ci.org/ssbarnea/coats)
-
 Collection of scripts (coats) that improve open-stack developer browsing experience
 
 FoxReplace.json is text replacements configuration for
@@ -13,5 +11,10 @@ multiple browsers.
 ![foxreplace-os-logs](https://s3.sbarnea.com/ss/181001-Mozilla_Firefox_.png)
 
 After you install Firefox extension you can either do an one-time import
-of the configuration from <https://raw.githubusercontent.com/ssbarnea/coats/master/coats/FoxReplace.json>
+of the configuration from <https://raw.githubusercontent.com/openstack/coats/master/coats/FoxReplace.json>
 or configure it to re-download it when it changes.
+
+## Contributing
+
+Before you raise a CR, please run "tox" locally to do a minimal set of
+linting and hopefully more in the future.
