@@ -12,6 +12,7 @@
         "envars",
         "envlist",
         "envs",
+        "gerrit",
         "htmlcov",
         "ifeq",
         "ifndef",
@@ -52,7 +53,8 @@
     "ignorePaths": [
         "docs/build",
         ".tox",
-        ".eggs"
+        ".eggs",
+        "package-lock.json"
     ],
     "ignoreWords": [
         "I18NSPHINXOPTS"

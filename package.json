@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "spell": "npm -s run spell-files && npm -s run spell-commit",
+    "spell": "which node && node --version && npm -s run spell-files && npm -s run spell-commit",
     "spell-commit": "git log -1 --pretty=%B > .git/commit.msg && cspell .git/commit.msg",
     "spell-files": "git ls-files | xargs cspell --unique"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ssbarnea/coats.git"
+    "url": "https://github.com/openstack/coats.git"
   },
   "keywords": [
     "openstack",
@@ -25,11 +25,16 @@
   "author": "Sorin Sbarnea",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ssbarnea/coats/issues"
+    "url": "https://storyboard.openstack.org/#!/project/openstack/coats"
   },
-  "homepage": "https://github.com/ssbarnea/coats#readme",
+  "homepage": "https://github.com/openstack/coats#readme",
   "dependencies": {
     "cspell": "^2.1.12",
+    "node": ">=8.0",
+    "npm": "^6.1.0"
+  },
+  "engines": {
+    "node": ">=8.0",
     "npm": "^6.1.0"
   }
 }
