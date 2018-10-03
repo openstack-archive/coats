@@ -1,0 +1,15 @@
+---
+- project:
+    templates:
+      - nodejs4-jobs
+    # bionic needed for less ancient nodejs/npm
+    # nodeset:
+    #   nodes:
+    #     - name: ubuntu-bionic
+    #       label: ubuntu-bionic
+    check:
+      jobs:
+        - openstack-tox-linters
+    gate:
+      jobs:
+        - openstack-tox-linters
