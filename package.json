@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ssbarnea/coats.git"
+    "url": "https://github.com/openstack/coats.git"
   },
   "keywords": [
     "openstack",
@@ -25,11 +25,12 @@
   "author": "Sorin Sbarnea",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ssbarnea/coats/issues"
+    "url": "https://storyboard.openstack.org/#!/project/openstack/coats"
   },
-  "homepage": "https://github.com/ssbarnea/coats#readme",
+  "homepage": "https://github.com/openstack/coats#readme",
   "dependencies": {
     "cspell": "^2.1.12",
     "npm": "^6.1.0"
-  }
+  },
+  "engines" : { "node" : ">=6.0" }
 }
