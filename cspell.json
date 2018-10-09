@@ -11,6 +11,7 @@
         "envlist",
         "envs",
         "gerrit",
+        "hideci",
         "htmlcov",
         "ifeq",
         "ifndef",
