@@ -11,6 +11,7 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-vcs-permalinks
+      - id: check-json
       - id: flake8
       - id: debug-statements
       - id: requirements-txt-fixer
@@ -26,3 +27,8 @@ repos:
     rev: 0.6.0
     hooks:
       - id: bashate
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: 'v5.5.0'  # Use the sha / tag you want to point at
+    hooks:
+      - id: eslint
+        entry: "eslint --format unix"
