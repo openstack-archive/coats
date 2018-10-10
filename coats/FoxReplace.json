@@ -2,7 +2,7 @@
   "version": "2.1",
   "groups": [
     {
-      "name": "failed2",
+      "name": "errors-and-warnings",
       "urls": [
         "http://logs.openstack.org",
         "http://logs.rdoproject.org",
@@ -14,61 +14,55 @@
         {
           "input": "(failed[=:]\\s?[1-9]\\d*.*)",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": true
         },
         {
           "input": "(\\*\\*\\* FAILED with status: .*)",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": true
         },
         {
           "input": "(.* failed with error code .*)",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": true
         },
         {
-          "input": "((ERROR|error|fatal|RUN END RESULT_TIMED_OUT)[:\\!] .*)",
+          "input": "((ERROR|ERR|Finished: ABORTED|error|fatal|RUN END RESULT_TIMED_OUT|Traceback \\(most recent call last\\))[:\\!] .*)",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": false
         },
         {
           "input": "(Failed \\d+ tests - output below:)",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": true
         },
         {
           "input": "(\\[(DEPRECATION )?WARNING\\].*)",
           "inputType": "regexp",
-          "output": "<span style='color: orange;'>$1</span>",
+          "output": "<mark style='color: orange;'>$1</mark>",
           "caseSensitive": true
         },
         {
           "input": "(.*CREATE_FAILED.*)",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": true
         },
         {
-          "input": "(Exception registering nodes|failed: [^0]|Could not find or access ).*",
+          "input": "(Exception |failed: [^0]|Could not find or access ).*",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$&</span>",
+          "output": "<mark style='color: red;'>$&</mark>",
           "caseSensitive": true
         },
         {
-          "input": "(error:.*)",
+          "input": "(.* (Terminated|marked build as failure|No such file or directory|found a duplicate dict key|which is incompatible\\.|unbound variable))",
           "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
-          "caseSensitive": false
-        },
-        {
-          "input": "(.* (marked build as failure|No such file or directory))",
-          "inputType": "regexp",
-          "output": "<span style='color: red;'>$1</span>",
+          "output": "<mark style='color: red;'>$1</mark>",
           "caseSensitive": true
         }
       ],
@@ -77,7 +71,7 @@
       "mode": "auto&manual"
     },
     {
-      "name": "hyperlinking-logs",
+      "name": "hyperlinks-logs",
       "urls": [
         "http://logs.openstack.org",
         "http://logs.rdoproject.org",
@@ -90,6 +84,35 @@
           "input": "/home/zuul/workspace/logs/(\\w+)\\.log",
           "inputType": "regexp",
           "output": "<a href=\"logs/$1.txt.gz\" style=\"color: blue;\">$&</a>",
+          "caseSensitive": false
+        },
+        {
+          "input": "\"overcloud_deploy_result\": \"failed\"",
+          "inputType": "regexp",
+          "output": "<a href=\"logs/undercloud/home/zuul/overcloud_deploy.log.txt.gz\" style=\"color: blue;\">$&</a>",
+          "caseSensitive": false
+        },
+        {
+          "input": "/home/zuul/(^workspace/)\\w+\\.log",
+          "inputType": "regexp",
+          "output": "<a href=\"logs/undercloud/$1.txt.gz\" style=\"color: blue;\">$&</a>",
+          "caseSensitive": false
+        }
+      ],
+      "html": "output",
+      "enabled": true,
+      "mode": "auto&manual"
+    },
+    {
+      "name": "hyperlinks-taiga",
+      "urls": [
+        "https://tree.taiga.io"
+      ],
+      "substitutions": [
+        {
+          "input": "CR\\s?(\\d+)",
+          "inputType": "regexp",
+          "output": "<a href=\"https://review.openstack.org/#/c/$1\" style=\"color: blue;\">$&</a>",
           "caseSensitive": false
         }
       ],
