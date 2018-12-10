@@ -5,6 +5,7 @@
         "TOXENV",
         "atexit",
         "bdist",
+        "bugzilla",
         "conda",
         "deps",
         "envars",
