@@ -12,7 +12,7 @@ some extra coloring on build logs, making them easier to read. We plan to
 convert this into a greasemonkey helper in the future to allow use from
 multiple browsers.
 
-![foxreplace-os-logs](https://raw.githubusercontent.com/openstack/coats/master/doc/source/_static/img/coats-log-highlight-example.png)
+<img alt=foxreplace-os-logs src=img/coats-log-highlight-example.png width=100%>
 
 After you install Firefox extension you can either do an one-time import
 of the configuration from <https://raw.githubusercontent.com/openstack/coats/master/coats/FoxReplace.json>
@@ -33,7 +33,7 @@ websites you may find useful to use [Context Search Firefox extension](https://a
 allows you to perform context searches. You can import the configuration from
 ``coats/searchEngines.json``
 
-![coats-log-highlight-example](https://raw.githubusercontent.com/openstack/coats/master/doc/source/_static/img/coats-log-highlight-example.png)
+<img alt=coats-log-highlight-example src=img/coats-firefox-context-search.png width=100%>
 
 ## Contributing
 

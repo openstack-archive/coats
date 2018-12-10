@@ -7,9 +7,13 @@
     nodeset: ubuntu-bionic
 
 - project:
+    templates:
+      - docs-on-readthedocs
     check:
       jobs:
+        - build-openstack-sphinx-docs
         - openstack-tox-linters-npm
     gate:
       jobs:
+        - build-openstack-sphinx-docs
         - openstack-tox-linters-npm
