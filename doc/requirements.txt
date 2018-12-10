@@ -1,0 +1,3 @@
+m2r # MIT
+openstackdocstheme>=1.18.1 # Apache-2.0
+sphinx>=1.6.5,!=1.6.6,!=1.6.7 # BSD
