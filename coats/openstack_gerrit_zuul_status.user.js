@@ -15,17 +15,17 @@
 // ==UserScript==
 // @name     Gerrit Zuul Status
 // @author   Michel Peterson
-// @version  6
+// @version  7
 // @grant    none
-// @include  /^https?://review\.openstack\.org/(#/c/)?\d*?/?(\d*)?/?$/
+// @include  /^https?://review\.(openstack|opendev)\.org/(#/c/)?\d*?/?(\d*)?/?$/
 // @require  https://code.jquery.com/jquery-3.3.1.min.js
 // @require  https://review.openstack.org/static/hideci.js
 // ==/UserScript==
 
 // Config
-
-const zuul_status_base = "https://zuul.openstack.org/";
-const zuul_status_url = zuul_status_base + "api/status/change/";
+const zuul_status_base = "https://zuul.opendev.org/";
+// TODO: find a way to deal with multiple tenants
+const zuul_status_url = zuul_status_base + "api/tenant/openstack/status/change/";
 
 // /Config
 
